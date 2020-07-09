@@ -27,3 +27,9 @@ h1{
 	margin: 40px 0px; 
 }
 
+p{
+    text-align: center;
+    font-size: 40px;
+    color: blue;
+    font-weight: bold;
+}
