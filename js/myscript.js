@@ -1,11 +1,11 @@
-var player1,player2;
+var player1="undefined",player2="undefined";
 var count=0;
 var array = Array.from(Array(3), () => new Array(3));
 var button_clicked = Array.from(Array(3), () => new Array(3));
 var gameover=0;
 
 function input1(clicked){
-	if(clicked=="btn1")
+	if(clicked=="btn1" && player1!="undefined" && player2!="undefined")
 		{	row=0;
 			col=0;		
 			count++;
@@ -24,7 +24,7 @@ function input1(clicked){
 			}	
 			
 		}
-	if(clicked=="btn2")
+	if(clicked=="btn2" && player1!="undefined" && player2!="undefined")
 		{			
 			row=0;
 			col=1;
@@ -43,7 +43,7 @@ function input1(clicked){
 				}
 			}
 		}
-	if(clicked=="btn3")
+	if(clicked=="btn3" && player1!="undefined" && player2!="undefined")
 		{	
 			row=0;
 			col=2;
@@ -62,7 +62,7 @@ function input1(clicked){
 				}
 			}
 		}
-	if(clicked=="btn4")
+	if(clicked=="btn4" && player1!="undefined" && player2!="undefined")
 		{			
 			row=1;
 			col=0;
@@ -81,7 +81,7 @@ function input1(clicked){
 				}
 			}
 		}
-	if(clicked=="btn5")
+	if(clicked=="btn5" && player1!="undefined" && player2!="undefined")
 		{			
 			row=1;
 			col=1;
@@ -100,7 +100,7 @@ function input1(clicked){
 				}
 			}
 		}
-	if(clicked=="btn6")
+	if(clicked=="btn6" && player1!="undefined" && player2!="undefined")
 		{			
 			row=1;
 			col=2;
@@ -119,7 +119,7 @@ function input1(clicked){
 				}
 			}
 		}	
-	if(clicked=="btn7")
+	if(clicked=="btn7" && player1!="undefined" && player2!="undefined")
 		{			
 			row=2;
 			col=0;
@@ -138,7 +138,7 @@ function input1(clicked){
 				}
 			}
 		}
-	if(clicked=="btn8")
+	if(clicked=="btn8" && player1!="undefined" && player2!="undefined")
 		{			
 			row=2;
 			col=1;
@@ -157,7 +157,7 @@ function input1(clicked){
 				}
 			}
 		}	
-	if(clicked=="btn9")
+	if(clicked=="btn9" && player1!="undefined" && player2!="undefined")
 		{			
 			row=2;
 			col=2;
