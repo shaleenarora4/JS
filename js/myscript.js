@@ -217,17 +217,20 @@ function check(){
 			if(row==0 && col==0)
 			{	//document.getElementById("btn1").innerHTML = array[row][col];
 				//count++;
+
 				if((array[0][1]==array[row][col] && array[0][2]==array[row][col]) || 
 					(array[1][1]==array[row][col] && array[2][2]==array[row][col]) ||
 					 (array[0][1]==array[row][col] && array[0][2]==array[row][col])){
 					
 					if(count%2!=0){
-						alert("Player 1 wins");
+						//alert("Player 1 wins");
+						setTimeout(function() { alert("Player 1 wins"); }, 200);
 						gameover=1;
 					}
 					else
 					{
-						alert("Player 2 wins");
+						//alert("Player 2 wins");
+						setTimeout(function() { alert("Player 2 wins"); }, 200);
 						gameover=1;
 					}
 				}
@@ -241,12 +244,14 @@ function check(){
 					(array[1][1]==array[row][col] && array[2][1]==array[row][col])){
 					
 					if(count%2!=0){
-						alert("Player 1 wins");
+						//alert("Player 1 wins");
+						setTimeout(function() { alert("Player 1 wins"); }, 200);
 						gameover=1;
 					}
 					else
 					{
-						alert("Player 2 wins");
+						//alert("Player 2 wins");
+						setTimeout(function() { alert("Player 2 wins"); }, 200);
 						gameover=1;
 					}
 				}
@@ -261,13 +266,16 @@ function check(){
 				 (array[1][1]==array[row][col] && array[2][0]==array[row][col]) || 
 				 (array[1][2]==array[row][col] && array[2][2]==array[row][col])){
 				 	
+					
 					if(count%2!=0){
-						alert("Player 1 wins");
+						//alert("Player 1 wins");
+						setTimeout(function() { alert("Player 1 wins"); }, 200);
 						gameover=1;
 					}
 					else
 					{
-						alert("Player 2 wins");
+						//alert("Player 2 wins");
+						setTimeout(function() { alert("Player 2 wins"); }, 200);
 						gameover=1;
 					}
 				}
@@ -281,13 +289,16 @@ function check(){
 				if((array[1][1]==array[row][col] && array[1][2]==array[row][col]) ||
 				 (array[0][0]==array[row][col] && array[2][0]==array[row][col])){
 				 	
+					
 					if(count%2!=0){
-						alert("Player 1 wins");
+						//alert("Player 1 wins");
+						setTimeout(function() { alert("Player 1 wins"); }, 200);
 						gameover=1;
 					}
 					else
 					{
-						alert("Player 2 wins");
+						//alert("Player 2 wins");
+						setTimeout(function() { alert("Player 2 wins"); }, 200);
 						gameover=1;
 					}
 				}
@@ -302,13 +313,16 @@ function check(){
 					(array[0][1]==array[row][col] && array[2][1]==array[row][col]) ||
 					 (array[1][0]==array[row][col] && array[1][2]==array[row][col])){
 					
+					
 					if(count%2!=0){
-						alert("Player 1 wins");
+						//alert("Player 1 wins");
+						setTimeout(function() { alert("Player 1 wins"); }, 200);
 						gameover=1;
 					}
 					else
 					{
-						alert("Player 2 wins");
+						//alert("Player 2 wins");
+						setTimeout(function() { alert("Player 2 wins"); }, 200);
 						gameover=1;
 					}
 				}
@@ -322,13 +336,16 @@ function check(){
 				if((array[1][0]==array[row][col] && array[1][1]==array[row][col]) || 
 					(array[0][2]==array[row][col] && array[2][2]==array[row][col])){
 					//count++;
+					
 					if(count%2!=0){
-						alert("Player 1 wins");
+						//alert("Player 1 wins");
+						setTimeout(function() { alert("Player 1 wins"); }, 200);
 						gameover=1;
 					}
 					else
 					{
-						alert("Player 2 wins");
+						//alert("Player 2 wins");
+						setTimeout(function() { alert("Player 2 wins"); }, 200);
 						gameover=1;
 					}
 				}
@@ -343,13 +360,16 @@ function check(){
 					(array[2][1]==array[row][col] && array[2][2]==array[row][col]) || 
 					(array[1][0]==array[row][col] && array[0][0]==array[row][col])){
 					//count++;
+					
 					if(count%2!=0){
-						alert("Player 1 wins");
+						//alert("Player 1 wins");
+						setTimeout(function() { alert("Player 1 wins"); }, 200);
 						gameover=1;
 					}
 					else
 					{
-						alert("Player 2 wins");
+						//alert("Player 2 wins");
+						setTimeout(function() { alert("Player 2 wins"); }, 200);
 						gameover=1;
 					}
 				}
@@ -363,13 +383,16 @@ function check(){
 				if((array[2][0]==array[row][col] && array[2][2]==array[row][col]) || 
 					(array[1][1]==array[row][col] && array[0][1]==array[row][col])){
 					//count++;
+					
 					if(count%2!=0){
-						alert("Player 1 wins");
+						//alert("Player 1 wins");
+						setTimeout(function() { alert("Player 1 wins"); }, 200);
 						gameover=1;
 					}
 					else
 					{
-						alert("Player 2 wins");
+						//alert("Player 2 wins");
+						setTimeout(function() { alert("Player 2 wins"); }, 200);
 						gameover=1;
 					}
 				}
@@ -384,13 +407,16 @@ function check(){
 					(array[2][1]==array[row][col] && array[2][0]==array[row][col]) ||
 					 (array[1][2]==array[row][col] && array[0][2]==array[row][col])){
 					//count++;
+						
 					if(count%2!=0){
-						alert("Player 1 wins");
+						//alert("Player 1 wins");
+						setTimeout(function() { alert("Player 1 wins"); }, 300);
 						gameover=1;
 					}
 					else
 					{
-						alert("Player 2 wins");
+						//alert("Player 2 wins");
+						setTimeout(function() { alert("Player 2 wins"); }, 300);
 						gameover=1;
 					}
 				}
