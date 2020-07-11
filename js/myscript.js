@@ -8,15 +8,16 @@ function input1(clicked){
 	if(clicked=="btn1" && player1!="undefined" && player2!="undefined")
 		{	row=0;
 			col=0;		
-			count++;
-			if(count%2!=0){
-				array[row][col]=player1;
-			}
-			else{
-				array[row][col]=player2;
-			}
+			
 			if(typeof(button_clicked[row][col]) == "undefined"){
 				button_clicked[row][col]=1;
+				count++;
+				if(count%2!=0){
+					array[row][col]=player1;
+				}
+				else{
+					array[row][col]=player2;
+				}
 				document.getElementById(clicked).innerHTML = array[row][col];
 				if(gameover==0) {
 				check();
@@ -28,15 +29,16 @@ function input1(clicked){
 		{			
 			row=0;
 			col=1;
-			count++;
-			if(count%2!=0){
-				array[row][col]=player1;
-			}
-			else{
-				array[row][col]=player2;
-			}
-						if(typeof(button_clicked[row][col]) == "undefined"){
+			
+				if(typeof(button_clicked[row][col]) == "undefined"){
 				button_clicked[row][col]=1;
+				count++;
+				if(count%2!=0){
+					array[row][col]=player1;
+				}
+				else{
+					array[row][col]=player2;
+				}
 				document.getElementById(clicked).innerHTML = array[row][col];
 				if(gameover==0) {
 				check();
@@ -47,15 +49,16 @@ function input1(clicked){
 		{	
 			row=0;
 			col=2;
-			count++;
-			if(count%2!=0){
-				array[row][col]=player1;
-			}
-			else{
-				array[row][col]=player2;
-			}
+		
 				if(typeof(button_clicked[row][col]) == "undefined"){
 				button_clicked[row][col]=1;
+					count++;
+				if(count%2!=0){
+					array[row][col]=player1;
+				}
+				else{
+					array[row][col]=player2;
+				}
 				document.getElementById(clicked).innerHTML = array[row][col];
 				if(gameover==0) {
 				check();
@@ -66,15 +69,16 @@ function input1(clicked){
 		{			
 			row=1;
 			col=0;
-			count++;
-			if(count%2!=0){
-				array[row][col]=player1;
-			}
-			else{
-				array[row][col]=player2;
-			}
-						if(typeof(button_clicked[row][col]) == "undefined"){
+		
+				if(typeof(button_clicked[row][col]) == "undefined"){
 				button_clicked[row][col]=1;
+					count++;
+				if(count%2!=0){
+					array[row][col]=player1;
+				}
+				else{
+					array[row][col]=player2;
+				}
 				document.getElementById(clicked).innerHTML = array[row][col];
 				if(gameover==0) {
 				check();
@@ -85,15 +89,16 @@ function input1(clicked){
 		{			
 			row=1;
 			col=1;
-			count++;
-			if(count%2!=0){
-				array[row][col]=player1;
-			}
-			else{
-				array[row][col]=player2;
-			}
-						if(typeof(button_clicked[row][col]) == "undefined"){
+
+				if(typeof(button_clicked[row][col]) == "undefined"){
 				button_clicked[row][col]=1;
+							count++;
+				if(count%2!=0){
+					array[row][col]=player1;
+				}
+				else{
+					array[row][col]=player2;
+				}
 				document.getElementById(clicked).innerHTML = array[row][col];
 				if(gameover==0) {
 				check();
@@ -104,15 +109,16 @@ function input1(clicked){
 		{			
 			row=1;
 			col=2;
-			count++;
-			if(count%2!=0){
-				array[row][col]=player1;
-			}
-			else{
-				array[row][col]=player2;
-			}
-						if(typeof(button_clicked[row][col]) == "undefined"){
+			
+				if(typeof(button_clicked[row][col]) == "undefined"){
 				button_clicked[row][col]=1;
+				count++;
+				if(count%2!=0){
+					array[row][col]=player1;
+				}
+				else{
+					array[row][col]=player2;
+				}
 				document.getElementById(clicked).innerHTML = array[row][col];
 				if(gameover==0) {
 				check();
@@ -123,15 +129,16 @@ function input1(clicked){
 		{			
 			row=2;
 			col=0;
-			count++;
-			if(count%2!=0){
-				array[row][col]=player1;
-			}
-			else{
-				array[row][col]=player2;
-			}
-						if(typeof(button_clicked[row][col]) == "undefined"){
+
+				if(typeof(button_clicked[row][col]) == "undefined"){
 				button_clicked[row][col]=1;
+							count++;
+				if(count%2!=0){
+					array[row][col]=player1;
+				}
+				else{
+					array[row][col]=player2;
+				}
 				document.getElementById(clicked).innerHTML = array[row][col];
 				if(gameover==0) {
 				check();
@@ -142,15 +149,16 @@ function input1(clicked){
 		{			
 			row=2;
 			col=1;
-			count++;
-			if(count%2!=0){
-				array[row][col]=player1;
-			}
-			else{
-				array[row][col]=player2;
-			}
+			
 				if(typeof(button_clicked[row][col]) == "undefined"){
 				button_clicked[row][col]=1;
+				count++;
+				if(count%2!=0){
+					array[row][col]=player1;
+				}
+				else{
+					array[row][col]=player2;
+				}
 				document.getElementById(clicked).innerHTML = array[row][col];
 				if(gameover==0) {
 				check();
@@ -161,15 +169,16 @@ function input1(clicked){
 		{			
 			row=2;
 			col=2;
-			count++;
-			if(count%2!=0){
-				array[row][col]=player1;
-			}
-			else{
-				array[row][col]=player2;
-			}
+			
 			if(typeof(button_clicked[row][col]) == "undefined"){
 				button_clicked[row][col]=1;
+				count++;
+				if(count%2!=0){
+					array[row][col]=player1;
+				}
+				else{
+					array[row][col]=player2;
+				}
 				document.getElementById(clicked).innerHTML = array[row][col];
 				if(gameover==0) {
 				check();
