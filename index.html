@@ -3,31 +3,30 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="css\style.css">
+    
     <title>tiktactoe</title>
-    <link rel="stylesheet" href="css/style.css">  
-    <script src="js/myscript.js"></script> 
 </head>
 <body>
-	<h1>Tik Tac Toe</h1>
-	<div class="container">
-	<section class="grid">
-		<div class="item" id="item1"><button id="btn1" onclick="input1(this.id)"></button></div>
-		<div class="item" id="item2"><button id="btn2" onclick="input1(this.id)"></button></div>
-		<div class="item" id="item3"><button id="btn3" onclick="input1(this.id)"></button></div>
-		<div class="item" id="item4"><button id="btn4" onclick="input1(this.id)"></button></div>
-		<div class="item" id="item5"><button id="btn5" onclick="input1(this.id)"></button></div>
-		<div class="item" id="item6"><button id="btn6" onclick="input1(this.id)"></button></div>
-		<div class="item" id="item7"><button id="btn7" onclick="input1(this.id)"></button></div>
-		<div class="item" id="item8"><button id="btn8" onclick="input1(this.id)"></button></div>
-		<div class="item" id="item9"><button id="btn9" onclick="input1(this.id)"></button></div>
-	</section>
-	<section class="option" id="option">
-		<div class="item" id="item10"><button id="zero" onclick="input2(this.id)">0</button></div>
-		<div class="item" id="item11"><button id="cross" onclick="input2(this.id)">X</button></div>
-	</section>
-	</div>	
-	<p id="info">Player1 choose's either 0 or X</p>
+	<h1>TIK TAC TOE</h1>
+	<div id="container">
+		<div id="parent">
+			<div class="item" id="0,0"></div >
+			<div class="item" id="0,1"></div >
+			<div class="item" id="0,2"></div >
+			<div class="item" id="1,0"></div >
+			<div class="item" id="1,1"></div >
+			<div class="item" id="1,2"></div >
+			<div class="item" id="2,0"></div >
+			<div class="item" id="2,1"></div >
+			<div class="item" id="2,2"></div >
+		</div>
+		<div>
+			<button id="zero" onclick="input(this.id)">0</button>
+			<button id="cross" onclick="input(this.id)">X</button>
+		</div>
+	</div>
+	<p id="para">Player 1 can choose 0 or X </p>	
+	<script type="text/javascript" src="js\myscript.js"></script>
 </body>
 </html>
-
-

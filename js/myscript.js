@@ -1,435 +1,125 @@
-var player1="undefined",player2="undefined";
-var count=0;
-var array = Array.from(Array(3), () => new Array(3));
+var player1,player2,gameover=0;
+var count=1;
+var pos;
 var button_clicked = Array.from(Array(3), () => new Array(3));
-var gameover=0;
-
-function input1(clicked){
-	if(clicked=="btn1" && player1!="undefined" && player2!="undefined")
-		{	row=0;
-			col=0;		
-			
-			if(typeof(button_clicked[row][col]) == "undefined"){
-				button_clicked[row][col]=1;
-				count++;
-				if(count%2!=0){
-					array[row][col]=player1;
-				}
-				else{
-					array[row][col]=player2;
-				}
-				document.getElementById(clicked).innerHTML = array[row][col];
-				if(gameover==0) {
-				check();
-				}
-			}	
-			
-		}
-	if(clicked=="btn2" && player1!="undefined" && player2!="undefined")
-		{			
-			row=0;
-			col=1;
-			
-				if(typeof(button_clicked[row][col]) == "undefined"){
-				button_clicked[row][col]=1;
-				count++;
-				if(count%2!=0){
-					array[row][col]=player1;
-				}
-				else{
-					array[row][col]=player2;
-				}
-				document.getElementById(clicked).innerHTML = array[row][col];
-				if(gameover==0) {
-				check();
-				}
-			}
-		}
-	if(clicked=="btn3" && player1!="undefined" && player2!="undefined")
-		{	
-			row=0;
-			col=2;
-		
-				if(typeof(button_clicked[row][col]) == "undefined"){
-				button_clicked[row][col]=1;
-					count++;
-				if(count%2!=0){
-					array[row][col]=player1;
-				}
-				else{
-					array[row][col]=player2;
-				}
-				document.getElementById(clicked).innerHTML = array[row][col];
-				if(gameover==0) {
-				check();
-				}
-			}
-		}
-	if(clicked=="btn4" && player1!="undefined" && player2!="undefined")
-		{			
-			row=1;
-			col=0;
-		
-				if(typeof(button_clicked[row][col]) == "undefined"){
-				button_clicked[row][col]=1;
-					count++;
-				if(count%2!=0){
-					array[row][col]=player1;
-				}
-				else{
-					array[row][col]=player2;
-				}
-				document.getElementById(clicked).innerHTML = array[row][col];
-				if(gameover==0) {
-				check();
-				}
-			}
-		}
-	if(clicked=="btn5" && player1!="undefined" && player2!="undefined")
-		{			
-			row=1;
-			col=1;
-
-				if(typeof(button_clicked[row][col]) == "undefined"){
-				button_clicked[row][col]=1;
-							count++;
-				if(count%2!=0){
-					array[row][col]=player1;
-				}
-				else{
-					array[row][col]=player2;
-				}
-				document.getElementById(clicked).innerHTML = array[row][col];
-				if(gameover==0) {
-				check();
-				}
-			}
-		}
-	if(clicked=="btn6" && player1!="undefined" && player2!="undefined")
-		{			
-			row=1;
-			col=2;
-			
-				if(typeof(button_clicked[row][col]) == "undefined"){
-				button_clicked[row][col]=1;
-				count++;
-				if(count%2!=0){
-					array[row][col]=player1;
-				}
-				else{
-					array[row][col]=player2;
-				}
-				document.getElementById(clicked).innerHTML = array[row][col];
-				if(gameover==0) {
-				check();
-				}
-			}
-		}	
-	if(clicked=="btn7" && player1!="undefined" && player2!="undefined")
-		{			
-			row=2;
-			col=0;
-
-				if(typeof(button_clicked[row][col]) == "undefined"){
-				button_clicked[row][col]=1;
-							count++;
-				if(count%2!=0){
-					array[row][col]=player1;
-				}
-				else{
-					array[row][col]=player2;
-				}
-				document.getElementById(clicked).innerHTML = array[row][col];
-				if(gameover==0) {
-				check();
-				}
-			}
-		}
-	if(clicked=="btn8" && player1!="undefined" && player2!="undefined")
-		{			
-			row=2;
-			col=1;
-			
-				if(typeof(button_clicked[row][col]) == "undefined"){
-				button_clicked[row][col]=1;
-				count++;
-				if(count%2!=0){
-					array[row][col]=player1;
-				}
-				else{
-					array[row][col]=player2;
-				}
-				document.getElementById(clicked).innerHTML = array[row][col];
-				if(gameover==0) {
-				check();
-				}
-			}
-		}	
-	if(clicked=="btn9" && player1!="undefined" && player2!="undefined")
-		{			
-			row=2;
-			col=2;
-			
-			if(typeof(button_clicked[row][col]) == "undefined"){
-				button_clicked[row][col]=1;
-				count++;
-				if(count%2!=0){
-					array[row][col]=player1;
-				}
-				else{
-					array[row][col]=player2;
-				}
-				document.getElementById(clicked).innerHTML = array[row][col];
-				if(gameover==0) {
-				check();
-				}
-			}
-		}
-}
-
-
-function input2(clicked){
-	if(clicked=="zero")
-		{
-			player1=0;
-			player2="X";
-			var x = document.getElementById("info");
-			  if (!(x.style.display === "none")) {
-			    x.style.display = "none";
-			  }
-
-			  	var y = document.getElementById("option");
-		if (!(y.style.display === "none")) {
-			    y.style.display = "none";
-			  }
-		}
+//function to assign 0 or X to player1 and player2
+function input(clicked){
+	if(clicked=="zero"){
+		player1=0;
+		player2="X";
+	}
 	if(clicked=="cross"){
 		player1="X";
-		player2=0;
-		var x = document.getElementById("info");
-		if (!(x.style.display === "none")) {
-			    x.style.display = "none";
-			  }
-	}	
+		player2="0";
+	}
+	//to hide cross and 0 option and info displayed as soon as user clicks selects the option
+	if(player1!="undefined"){
+		document.getElementById("para").style.display="none";
+		document.getElementById("zero").style.display="none";
+		document.getElementById("cross").style.display="none";
+	}
+}
 
-	var y = document.getElementById("option");
-		if (!(y.style.display === "none")) {
-			    y.style.display = "none";
-			  }
+const parent=document.getElementById("parent");
+parent.addEventListener('click',event =>{    	
+			pos=event.target.id.split(",");			
+    		//console.log(pos[0],pos[1]);
+    		//debugger;
+    		if(count%2!=0 && gameover==0 && typeof(button_clicked[pos[0]][pos[1]])=="undefined" && typeof(player1)!="undefined" && typeof(player2)!="undefined"){
+	    		button_clicked[pos[0]][pos[1]]=player1;
+	    		event.target.innerHTML=button_clicked[pos[0]][pos[1]]; 
+	    		if(gameover==0){
+					check(pos);
+					count++;   }
+    		}
+
+    		if(count%2==0 && gameover==0 && typeof(button_clicked[pos[0]][pos[1]])=="undefined" && typeof(player1)!="undefined" && typeof(player2)!="undefined"){
+	    		button_clicked[pos[0]][pos[1]]=player2;
+				event.target.innerHTML=button_clicked[pos[0]][pos[1]]; 
+				if(gameover==0){
+					check(pos);
+					count++;   }		
+			}    		
+}); 
+
+
+/*
+1. first checks if the input given matches the entire row (checks only the row where element is selected) of the given input
+2. If row doesn't match then it checks if the input given matches the entire column (checks only the column where element 
+is selected) of the given input.
+3. If both row and column doesn't match it checks if the element lie on the diagnol,if it does then both the diagnols are checked. 
+if any of the above condition is true, it gives an alert ---- (player1/player2) wins and shows game over.
+*/
+
+function check(pos){
+	//checking in the entire row of selected element	
+		var row_flag=0;
+		//console.log(row_flag);
+		for(var j=0;j<3;j++){
+			//debugger;
+			if(!(button_clicked[pos[0]][pos[1]]==button_clicked[pos[0]][j])){
+					row_flag=1;
+			}
+			//if any element of row not matched break the loop
+			if(row_flag==1)
+				break;
+			//console.log(row_flag);
+		}
+		if(row_flag==0){//if row matched
+			gameover=1;
+			if(count%2!=0)
+			setTimeout(function() { alert("Player 1 wins"); }, 200);
+			else
+			setTimeout(function() { alert("Player 2 wins"); }, 200);
+		}
+		//check entire column of selected element only if row not matched
+		else{
+			var column_flag=0;
+			for(var i=0;i<3;i++){
+				//debugger;
+				if(!(button_clicked[pos[0]][pos[1]]==button_clicked[i][pos[1]])){
+						column_flag=1;
+				}
+				//if any element of column not matched break the loop
+				if(column_flag==1)
+					break;
+				//console.log(row_flag);
+		    }	
+			if(column_flag==0){//if column matched
+				gameover=1;
+				if(count%2!=0)
+				setTimeout(function() { alert("Player 1 wins"); }, 200);
+				else
+				setTimeout(function() { alert("Player 2 wins"); }, 200);
+			}
+
+			//check both diagnol as both column and row didn't match
+			else{
+				var d1=0;
+				var d2=0;
+				if(parseInt(pos[0])+parseInt(pos[1])==2 || pos[0]==pos[1]){ // checking if element lie on the diagnol
+					for(var z=0;z<3;z++){
+						//debugger;
+						if(!(button_clicked[pos[0]][pos[1]]==button_clicked[z][z]))
+							d1=1;
+						if(!(button_clicked[pos[0]][pos[1]]==button_clicked[z][2-z]))
+							d2=1;						
+					}
+					if(d1==0 || d2==0){
+						gameover=1;
+						if(count%2!=0)
+						setTimeout(function() { alert("Player 1 wins"); }, 200);
+						else
+						setTimeout(function() { alert("Player 2 wins"); }, 200);
+					}
+				}
+			}
+		}
 	}
 
 
-	
 
 
-function check(){
-			if(row==0 && col==0)
-			{	//document.getElementById("btn1").innerHTML = array[row][col];
-				//count++;
-
-				if((array[0][1]==array[row][col] && array[0][2]==array[row][col]) || 
-					(array[1][1]==array[row][col] && array[2][2]==array[row][col]) ||
-					 (array[0][1]==array[row][col] && array[0][2]==array[row][col])){
-					
-					if(count%2!=0){
-						//alert("Player 1 wins");
-						setTimeout(function() { alert("Player 1 wins"); }, 200);
-						gameover=1;
-					}
-					else
-					{
-						//alert("Player 2 wins");
-						setTimeout(function() { alert("Player 2 wins"); }, 200);
-						gameover=1;
-					}
-				}
-			}
 
 
-		if(row==0 && col==1)
-			{	//document.getElementById("btn2").innerHTML = array[row][col];
-				//count++;
-				if((array[0][0]==array[row][col] && array[0][2]==array[row][col]) || 
-					(array[1][1]==array[row][col] && array[2][1]==array[row][col])){
-					
-					if(count%2!=0){
-						//alert("Player 1 wins");
-						setTimeout(function() { alert("Player 1 wins"); }, 200);
-						gameover=1;
-					}
-					else
-					{
-						//alert("Player 2 wins");
-						setTimeout(function() { alert("Player 2 wins"); }, 200);
-						gameover=1;
-					}
-				}
-			}
 
-	
-
-		if(row==0 && col==2)
-			{	//document.getElementById("btn3").innerHTML = array[row][col];
-				//count++;
-				if((array[0][0]==array[row][col] && array[0][1]==array[row][col]) ||
-				 (array[1][1]==array[row][col] && array[2][0]==array[row][col]) || 
-				 (array[1][2]==array[row][col] && array[2][2]==array[row][col])){
-				 	
-					
-					if(count%2!=0){
-						//alert("Player 1 wins");
-						setTimeout(function() { alert("Player 1 wins"); }, 200);
-						gameover=1;
-					}
-					else
-					{
-						//alert("Player 2 wins");
-						setTimeout(function() { alert("Player 2 wins"); }, 200);
-						gameover=1;
-					}
-				}
-			}
-
-	
-
-		if(row==1 && col==0)
-			{	//document.getElementById("btn4").innerHTML = array[row][col];
-				//count++;
-				if((array[1][1]==array[row][col] && array[1][2]==array[row][col]) ||
-				 (array[0][0]==array[row][col] && array[2][0]==array[row][col])){
-				 	
-					
-					if(count%2!=0){
-						//alert("Player 1 wins");
-						setTimeout(function() { alert("Player 1 wins"); }, 200);
-						gameover=1;
-					}
-					else
-					{
-						//alert("Player 2 wins");
-						setTimeout(function() { alert("Player 2 wins"); }, 200);
-						gameover=1;
-					}
-				}
-			}
-
-	
-
-		if(row==1 && col==1)
-			{	//document.getElementById("btn5").innerHTML = array[row][col];
-				//count++;
-				if((array[0][0]==array[row][col] && array[2][2]==array[row][col]) || 
-					(array[0][1]==array[row][col] && array[2][1]==array[row][col]) ||
-					 (array[1][0]==array[row][col] && array[1][2]==array[row][col])){
-					
-					
-					if(count%2!=0){
-						//alert("Player 1 wins");
-						setTimeout(function() { alert("Player 1 wins"); }, 200);
-						gameover=1;
-					}
-					else
-					{
-						//alert("Player 2 wins");
-						setTimeout(function() { alert("Player 2 wins"); }, 200);
-						gameover=1;
-					}
-				}
-			}
-
-	
-
-		if(row==1 && col==2)
-			{	//document.getElementById("btn6").innerHTML = array[row][col];
-				//count++;
-				if((array[1][0]==array[row][col] && array[1][1]==array[row][col]) || 
-					(array[0][2]==array[row][col] && array[2][2]==array[row][col])){
-					//count++;
-					
-					if(count%2!=0){
-						//alert("Player 1 wins");
-						setTimeout(function() { alert("Player 1 wins"); }, 200);
-						gameover=1;
-					}
-					else
-					{
-						//alert("Player 2 wins");
-						setTimeout(function() { alert("Player 2 wins"); }, 200);
-						gameover=1;
-					}
-				}
-			}
-
-	
-
-		if(row==2 && col==0)
-			{	//document.getElementById("btn7").innerHTML = array[row][col];
-				//count++;
-				if((array[1][1]==array[row][col] && array[0][2]==array[row][col]) || 
-					(array[2][1]==array[row][col] && array[2][2]==array[row][col]) || 
-					(array[1][0]==array[row][col] && array[0][0]==array[row][col])){
-					//count++;
-					
-					if(count%2!=0){
-						//alert("Player 1 wins");
-						setTimeout(function() { alert("Player 1 wins"); }, 200);
-						gameover=1;
-					}
-					else
-					{
-						//alert("Player 2 wins");
-						setTimeout(function() { alert("Player 2 wins"); }, 200);
-						gameover=1;
-					}
-				}
-			}
-
-	
-
-		if(row==2 && col==1)
-			{	//document.getElementById("btn8").innerHTML = array[row][col];
-				//count++;
-				if((array[2][0]==array[row][col] && array[2][2]==array[row][col]) || 
-					(array[1][1]==array[row][col] && array[0][1]==array[row][col])){
-					//count++;
-					
-					if(count%2!=0){
-						//alert("Player 1 wins");
-						setTimeout(function() { alert("Player 1 wins"); }, 200);
-						gameover=1;
-					}
-					else
-					{
-						//alert("Player 2 wins");
-						setTimeout(function() { alert("Player 2 wins"); }, 200);
-						gameover=1;
-					}
-				}
-			}
-
-	
-
-		if(row==2 && col==2)
-			{	//document.getElementById("btn9").innerHTML = array[row][col];
-				//count++;
-				if((array[1][1]==array[row][col] && array[0][0]==array[row][col]) || 
-					(array[2][1]==array[row][col] && array[2][0]==array[row][col]) ||
-					 (array[1][2]==array[row][col] && array[0][2]==array[row][col])){
-					//count++;
-						
-					if(count%2!=0){
-						//alert("Player 1 wins");
-						setTimeout(function() { alert("Player 1 wins"); }, 300);
-						gameover=1;
-					}
-					else
-					{
-						//alert("Player 2 wins");
-						setTimeout(function() { alert("Player 2 wins"); }, 300);
-						gameover=1;
-					}
-				}
-			}
-
-
-	}
