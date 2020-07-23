@@ -1,0 +1,138 @@
+*{
+    padding: 0px 0px;
+    margin: 0px 0px;
+}
+nav {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    /* align-items: center; */
+    justify-content: flex-start;
+    padding: 0px 0px;
+    height: 555px;
+}
+nav::before {
+    z-index: -1;
+   background:url("https://in.bmscdn.com/iedb/movies/images/mobile/listing/xxlarge/joker-et00100071-03-04-2019-10-23-41.jpg") no-repeat center center/cover;
+    position: absolute;
+    content: "";
+    opacity: 0.9;
+    margin-top: 55px;
+    height: 500px;
+    width: 100%;    
+}
+
+input#argument {
+
+    border: solid black 3px;
+    border-radius: 4px;
+    padding: 6px 1%;
+    /* margin: 8px 29px; */
+    width: 500px;
+    background: transparent;
+    font-weight: bold;
+    font-size: 14px;
+    text-align: center;
+}
+#container {
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    align-items: center;   
+    position:absolute;
+}
+#suggested{
+    width: 500px;
+    background-color: #00000073;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+li{
+    display: flex;
+    justify-content: space-between;
+    color: whitesmoke;
+    padding: 0px 10px;
+}
+#search_results{
+    background-color:white ;
+    width:41%;
+    color: black;    
+}
+.item{
+    display: flex;
+    align-items: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: bold;
+}
+.item img{
+    height: 70px;
+    width: 70px;
+    padding: 5px 0px;
+}
+section{
+    height: 500px;
+    background-color: #131722;
+    color:white;
+    display: flex;
+    align-items: center;
+}
+h1{
+    width:20%;
+    text-align:center;
+    color:#24BAEF;
+}
+#popular_movies{
+   display: flex;
+   flex-wrap: wrap;
+   justify-content: space-evenly;
+   align-items: center;
+}
+.popular_item {
+    display: flex;
+    flex-direction: column;
+    padding: 5px 21px;
+    align-items: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: bold;
+}
+.popular_item img{
+    height:200px;
+    width:150px; 
+}
+#movie_details{
+    display: none;
+}
+
+div#poster{
+    padding:2px 30px;
+}
+table{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    table-layout: auto ;
+    text-align: left;
+    font-size: 20px;
+}
+tbody{
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+}
+table tr{
+    display: flex;
+    align-items: center;
+    padding: 30px;
+}
+table td{
+    padding:0px 30px;
+}
+hr{
+    color:#24BAEF;
+}
+
+
+/*
+div#further_details > div {
+    padding: 18px 32px;
+    font-size: 27px;
+    text-align: justify;
+}*/
