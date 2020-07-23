@@ -1,0 +1,19 @@
+*{
+    padding: 0px 0px;
+    margin: 0px 0px;
+}
+#chessboard {
+    display: grid;
+    grid-template-columns: repeat(8,3vw);
+    grid-template-rows: repeat(8,3vw);
+    justify-content: center;
+    margin: 50vh 0vw;
+}
+
+.item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 0.3px solid  black;
+    font-size: 2vh;
+}
