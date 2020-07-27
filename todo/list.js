@@ -1,6 +1,6 @@
 const createListElement = createTemplate(`<div class='item' $id>
                                         <div id='radio-task'>
-                                            <input $data_id type='radio' onclick="taskStatus(this.id)"/>
+                                            <input $data_id type='radio' onclick="alterStatus(this.id)"/>
                                             <p>$task_detail</p>
                                         </div>
                                         <div id='button_div'>

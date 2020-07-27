@@ -22,6 +22,7 @@ function getPreviousData() {
 function inputlistener(count) {
     const input = document.getElementById('input_text');
     input.addEventListener('keyup', function (e) {
+        // debugger;
         if (e.keyCode === 13 && e.target.value.trim()) {
             localStorage.setItem(count, e.target.value);
             createListElement(count++,e.target.value);

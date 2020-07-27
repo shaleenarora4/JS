@@ -35,6 +35,7 @@ body{
     height: 6vw;
     border: none;
     border-bottom: 0.5px solid lightgray;
+    opacity:0.5;
     /* font-family: 'Satisfy', cursive; */
 }
 
@@ -64,6 +65,9 @@ input :hover,input:focus{
     display: flex;
     align-items: center;
     margin-left: 10px;
+}
+input[type='radio']:checked{
+    background-color: blueviolet;
 }
 #radio-task >p{
     padding: 0px 10px;
@@ -102,3 +106,4 @@ div#tasks-left {
     border: 0.1px solid #a3962757;
     border-radius: 10%;
 }
+
