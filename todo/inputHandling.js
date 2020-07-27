@@ -8,7 +8,7 @@ function createStorage() {
 
 function getPreviousData() {
     let TotalItems=0;
-    if (localStorage.getItem('totalItems') !== null) {
+    if (localStorage.length !==0) {
         TotalItems = Number(localStorage.getItem('totalItems'));
         for (let i = 0; i < TotalItems; i++) {
             const task = localStorage.getItem(i);

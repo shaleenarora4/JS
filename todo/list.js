@@ -1,6 +1,6 @@
-const createListElement = createTemplate(`<div id='item'>
+const createListElement = createTemplate(`<div class='item' $id>
                                         <div id='radio-task'>
-                                            <input $data_id type='radio'/>
+                                            <input $data_id type='radio' onclick="taskStatus(this.id)"/>
                                             <p>$task_detail</p>
                                         </div>
                                         <div id='button_div'>
@@ -14,8 +14,10 @@ function createTemplate(Tasktemplate){
         const parent = document.getElementById('list');
         let html = Tasktemplate.replace('$task_detail', task);
         html = html.replace('$data_id', `id=${id}`);
+        html=html.replace('$id', `id=item${id}`);
         parent.innerHTML += html;
         localStorage.setItem('totalItems', id + 1);
-        document.querySelector('span').innerHTML = ++id + " ";
+        taskStatus(id);
+        document.querySelector('span').innerHTML = ++id + " ";        
     };
 }
