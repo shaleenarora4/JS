@@ -25,8 +25,10 @@ function getTaskStatus(){
 }
 
 function statusSettings(status,id){
+    // debugger;
     const radioButton=document.getElementById(id);
     const span=document.querySelector('span');
+    // debugger;
         if(status){
         radioButton.checked=true;
         radioButton.nextElementSibling.style.textDecoration='line-through';

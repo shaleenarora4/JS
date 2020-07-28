@@ -7,15 +7,13 @@ function createStorage() {
 
 
 function getPreviousData() {
-    let TotalItems=0;
-    if (localStorage.length !==0) {
-        TotalItems = Number(localStorage.getItem('totalItems'));
-        for (let i = 0; i < TotalItems; i++) {
-            const task = localStorage.getItem(i);
-            const task_id = i;
-            createListElement(task_id,task);
-        }
-    }
+    // debugger;
+    const TotalItems = Number(localStorage.getItem('totalItems')) || 0;
+    for (let i = 0; i < TotalItems; i++) {
+        const task = localStorage.getItem(i);
+        const task_id = i;
+        createListElement(task_id,task);
+    }    
     return TotalItems;
 }
 
