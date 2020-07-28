@@ -17,7 +17,7 @@ function createTemplate(Tasktemplate){
         html=html.replace('$id', `id=item${id}`);
         parent.innerHTML += html;
         localStorage.setItem('totalItems', id + 1);
-        taskStatus(id);
-        document.querySelector('span').innerHTML = ++id + " ";        
+        taskStatus(id);       
     };
 }
+
