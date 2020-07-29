@@ -1,6 +1,7 @@
 *{
     padding: 0px 0px;
     margin: 0px 0px;
+    outline: none;
 }
 body{
     background-color: #a9a9a91c;
@@ -88,13 +89,15 @@ input[type='radio']:checked{
 }
 button#delete{
     background-color: white;
-    padding: 0.5vw 0.7vw;
+    padding: 0.5vw 7vw;
+    border:none;
+    color: white;
+}
+button#delete:hover,button#delete:active{
+    /* border: 0.1px solid lightgray; */
+    /* border-radius: 50%; */
     border:none;
     color: rgb(207, 79, 57);
-}
-button#delete:hover{
-    border: 0.1px solid lightgray;
-    border-radius: 50%;
 }
 #info {
     display: flex;

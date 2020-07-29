@@ -7,7 +7,7 @@ function createTemplate(){
                             <p>$task_detail</p>
                         </div>
                         <div id='button_div'>
-                            <button id='delete'>X</button>
+                            <button id='delete' >X</button>
                         </div>
                         </div>`;
     return function(id,task) {

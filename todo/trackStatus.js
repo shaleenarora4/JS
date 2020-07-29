@@ -18,8 +18,13 @@ function getTaskStatus(){
             status[id]=false;
             statusSettings(status[id],id);//just want to set span properties 
         }    
-        else //to set status settings on refresh - the id's already exists in local mem
+        else{ //to set status settings on refresh - the id's already exists in local mem
+            if (status[id]===true){
+                const span=document.querySelector('span');
+                span.innerHTML=Number(span.innerHTML)+1+" " ;
+            }
             statusSettings(status[id],id); 
+    }
         localStorage.setItem('complete',JSON.stringify(status)); 
     };
 }
