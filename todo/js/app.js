@@ -1,4 +1,5 @@
 let todos = [];
+let selectedFilter = 'completed';
 
 const onInputChange = function (e) {
     const todos = fetchTodos();
@@ -23,11 +24,17 @@ const onStatusChange = function (id) {
         }
         return todo;
     });
-    render(updatedTodos);
     saveTodos(updatedTodos);
+    render(getFilteredTodos(selectedFilter));
 }
 
 const onFilterChange = function (filter) {
+    selectedFilter = filter;
+    const todos = getFilteredTodos(filter);
+    render(todos);
+}
+
+const getFilteredTodos = function (filter) {
     let todos = fetchTodos();
     if (filter === 'active') {
         todos = todos.filter(todo => {
@@ -38,7 +45,7 @@ const onFilterChange = function (filter) {
             return todo.completed;
         });
     }
-    render(todos);
+    return todos;
 }
 
 const onDelete = function (id) {
