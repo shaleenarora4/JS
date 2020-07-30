@@ -51,8 +51,8 @@ const getFilteredTodos = function (filter) {
 const onDelete = function (id) {
     const todos = fetchTodos();
     const updatedTodos = todos.filter(todo => todo.id !== id);
-    render(updatedTodos);
     saveTodos(updatedTodos);
+    render(getFilteredTodos(selectedFilter));
 }
 
 const clearInput = function () {
