@@ -19,3 +19,8 @@ const utils={
     id:idGenerator
 }
 
+clearStorage=function(){
+    localStorage.clear();
+    render([]);
+}
+

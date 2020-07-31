@@ -1,4 +1,4 @@
-filter='all';
+let filter='all';
 const onInput=function(e){
     const title=e.target.value;
     if(e.keyCode===13 && title){
@@ -67,11 +67,6 @@ const filterChange=function(currentFilter){
 const init=function(){
     todo=fetchtodos();
     render(todo);
-}
-
-clearStorage=function(){
-    localStorage.clear();
-    render([]);
 }
 
 init();
