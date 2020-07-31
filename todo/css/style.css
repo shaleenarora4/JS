@@ -1,0 +1,75 @@
+*{
+    padding: 0px 0px;
+    margin: 0px 0px;
+    outline: none;
+}
+body{
+    font-family: 'Roboto', sans-serif;
+}
+.container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-sizing: border-box;
+    min-width: 25%;
+    align-items: center;
+}
+
+.input-container{
+    width:50%;
+    padding: 10px 10px;
+    min-width: 25%;
+}
+
+.input-container input{
+    box-sizing: border-box;
+    width: 100%;
+    padding: 7px 10px;
+    background: #80808012;
+    border: thin solid #00000029;
+}
+.item:hover .item-delete {
+    opacity: 0.8;
+}
+
+.item-delete {
+    opacity: 0;
+    transition-duration: 0.2s;
+}
+
+.list{
+    width:50%;
+    min-width: 25%;
+}
+.item-checkbox{
+    width: 24px;
+    height: 20px;
+    margin: 2px 2px;
+}
+.item{
+    display: flex;
+    border:thin solid #00000029;
+    height:25px;
+    font-size: 15px;
+    align-items: center;
+    
+}
+.item-title {
+    flex-grow: 1;
+}
+.item.completed .item-title {
+    text-decoration: line-through;
+    color: #888;
+}
+
+.filter-list{
+    display: flex;
+    width: 50%;
+    min-width: 25%;
+    font-size: 10px;
+}
+
+.filter-list >div{
+    padding: 3px 4px;
+    border: #80808012 solid 2px;
+}

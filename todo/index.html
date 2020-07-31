@@ -3,33 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel='stylesheet' href='style.css'>
-    <link href="https://fonts.googleapis.com/css2?family=Satisfy&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab&family=Satisfy&display=swap" rel="stylesheet">
-    <script src='js/inputHandling.js'></script>
-    <script src='js/list.js'></script>
-    <script src='js/trackStatus.js'></script>
-    <script src='js/active.js'></script>
+    <link rel='stylesheet' href='css/style.css'>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&family=Source+Sans+Pro:ital@1&display=swap" rel="stylesheet">
+    <title>Document</title>    
 </head>
 <body>
-    <div id='header'>TODO        
-    </div>    
-    <div id='todo-list' >
-        <div id='input-box'>
-            <input id='input_text' type='text' placeholder="    + Add Task">
-        </div>
-        <div id='list' class='list-items'></div> 
-        <div id='active-list' class='list-items'></div>
-        <div id='complete-list' class='list-items'></div>        
-        <div id='info'> 
-            <div id='tasks-left'><span> </span>items left</div>
-            <div id='display-choice'>
-                <div id='All' onclick="getList(this.id)">All</div>
-                <div id='Active' onclick="getList(this.id)">Active</div>
-                <div id='Completed' onclick="getList(this.id)">Completed</div>
-            </div>
+    <div class='container'>
+        <div class='input-container'>
+            <input onkeyup='onInput(event)' placeholder="What's your task?">
         </div>    
-    </div>
+        <div class='list'>             
+        </div>
+        <div class='filter-list'>
+            <div onclick="filterChange('all')">All</div>
+            <div onclick="filterChange('active')">Active</div>
+            <div onclick="filterChange('completed')">Completed</div>
+            <div onclick="clearStorage()">Clear List</div>
+        </div>        
+    </div>    
 </body>
+<script src=js/utils.js></script>
+<script src='js/render.js'></script>
+<script src=js/data.js></script>
+<script src=js/main.js></script>
 </html>
