@@ -1,4 +1,15 @@
 let filter='all';
+
+const parent=document.querySelector('.filter-list');
+parent.addEventListener('click',function(e) {
+    let childNodes=e.currentTarget.childNodes;
+    for(let i=1;i<childNodes.length;i+=2){
+        childNodes[i].style.background='';
+    }
+    e.target.style.background='#00968892';
+});
+
+
 const onInput=function(e){
     const title=e.target.value;
     if(e.keyCode===13 && title){
@@ -6,7 +17,8 @@ const onInput=function(e){
         todo.push({
             title:title,
             id:idGenerator(),
-            completed:false
+            completed:false,
+            priority:''
         }
         )
         savetodos(todo);
@@ -15,58 +27,106 @@ const onInput=function(e){
     }
 }
 const statusChange=function(id){  
-    todo=fetchtodos();
-    var eleFound=false;
-    for(let i=0;i<todo.length;i++){//changed
-        if(todo[i].id===id){
-            todo[i].completed=!todo[i].completed;
-            eleFound=true;
-        }
-        if(eleFound===true)
+    todos=fetchtodos();
+    for(let i=0;i<todos.length;i++){
+        if(todos[i].id===id){
+            todos[i].completed=!todos[i].completed;
             break;
+        }
     }
-    savetodos(todo);
+    savetodos(todos);
     filterChange(filter);
 }
 
 const deleteItem=function(id){
-    todo=fetchtodos();
-    updatedtodo=[];
-    for(let i=0;i<todo.length;i++){
-        if(todo[i].id!==id){
-            updatedtodo.push(todo[i]);
+    debugger;
+    const todos=fetchtodos();
+    let updatedtodos=[];
+    for(let i=0;i<todos.length;i++){
+        if(todos[i].id!==id){
+            updatedtodos.push(todos[i]);
         }
     }
-    savetodos(updatedtodo);
-    filterChange(filter);    
+    savetodos(updatedtodos);
+    filterChange(filter);  
+    
 }
 
 const filterChange=function(currentFilter){
     filter=currentFilter;
-    todo=fetchtodos();
-    if(filter==='active'){
-        temptodo=[];
-        for(let i=0;i<todo.length;i++){
-            if(!todo[i].completed){
-                temptodo.push(todo[i]);
+    let todos=fetchtodos();
+    
+    if(filter==='all'){
+        render(todos);
+        return; 
+    }    
+    else{
+        let updatedtodos=[];    
+        switch(filter){            
+            case 'active': for(let i=0;i<todos.length;i++){
+                if(!todos[i].completed)
+                    updatedtodos.push(todos[i]);                
             }
-        }
-        todo=temptodo;
-    }
-    else if(filter==='completed'){
-        temptodo=[];
-        for(let i=0;i<todo.length;i++){
-            if(todo[i].completed){
-                temptodo.push(todo[i]);
+            render(updatedtodos);
+            break;
+
+            case 'completed': for(let i=0;i<todos.length;i++){
+                if(todos[i].completed)
+                    updatedtodos.push(todos[i]);                
             }
-        }
-        todo=temptodo;
-    }
-    render(todo);
+            render(updatedtodos);
+            break;
+
+            case 'priority' : priorityList();
+            break;
+
+            case 'clear' : clearStorage();
+            break;
+            
+        } 
+    }   
+    
 }
+
+const onPriorityInput=function(priority,id){
+    let todos=fetchtodos();
+    for(let i=0;i<todos.length;i++){
+        if(id===todos[i].id)
+        {
+            todos[i].priority=priority;
+            break;
+        }
+    }
+    savetodos(todos);
+    filterChange(filter);
+}
+
+const priorityList=function(){ 
+    const todos=fetchtodos();
+    let priorityTodos=[];
+    for(let i=0;i<todos.length;i++){
+        if(todos[i].priority==='p0')
+        priorityTodos.push(todos[i]);
+    }
+    for(let i=0;i<todos.length;i++){
+        if(todos[i].priority==='p1')
+        priorityTodos.push(todos[i]);
+    }
+    for(let i=0;i<todos.length;i++){
+        if(todos[i].priority==='p2')
+        priorityTodos.push(todos[i]);
+    }
+    for(let i=0;i<todos.length;i++){
+        if(todos[i].priority==='')
+        priorityTodos.push(todos[i]);
+    }
+    render(priorityTodos)
+}     
+
+
 const init=function(){
-    todo=fetchtodos();
-    render(todo);
+    todos=fetchtodos();
+    render(todos);
 }
 
 init();
