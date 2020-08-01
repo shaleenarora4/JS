@@ -9,7 +9,6 @@ parent.addEventListener('click',function(e) {
     e.target.style.background='#00968892';
 });
 
-
 const onInput=function(e){
     const title=e.target.value;
     if(e.keyCode===13 && title){
@@ -81,6 +80,7 @@ const filterChange=function(currentFilter){
             break;
 
             case 'clear' : clearStorage();
+                  filter='all';
             break;
             
         } 

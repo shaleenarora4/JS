@@ -5,3 +5,4 @@ const savetodos=function(todo){
 const fetchtodos=function(){
     return utils.storage.fetch('todos');
 }
+
