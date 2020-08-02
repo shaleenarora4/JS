@@ -1,13 +1,13 @@
 const render=(function(){
 const template=`<div class='item $completed'>
-                <input class='item-checkbox' $checked type='checkbox' onclick="statusChange('$id')"/>
+                <input class='item-checkbox' data-status-id='$id' $checked type='checkbox'/>
                 <div class='item-title'>$task</div>
                 <div class='priority'>
-                    <div><input name=p0 class='priority-checkbox p0' type='checkbox' onclick="onPriorityInput('p0','$id')"/></div>
-                    <div><input name=p1 class='priority-checkbox p1' type='checkbox' onclick="onPriorityInput('p1','$id')"/></div>
-                    <div><input name=p2 class='priority-checkbox p2' type='checkbox' onclick="onPriorityInput('p2','$id')"/></div>
+                    <div><input name=p0 priority-id='p0' input-id='$id' class='priority-checkbox p0' type='checkbox' /></div>
+                    <div><input name=p1 priority-id='p1' input-id='$id' class='priority-checkbox p1' type='checkbox' /></div>
+                    <div><input name=p2 priority-id='p2' input-id='$id' class='priority-checkbox p2' type='checkbox' /></div>
                 </div>
-                <div class='item-delete' onclick="deleteItem('$id')">X</div>
+                <div class='item-delete' data-delete-id='$id'>X</div>
                 </div>  `;
 const parent=document.querySelector('.list');
 

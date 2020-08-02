@@ -21,6 +21,6 @@ const utils={
 
 clearStorage=function(){
     localStorage.clear();
-    render([]);
+    updateState('todos',{'todos':[]});
 }
 
